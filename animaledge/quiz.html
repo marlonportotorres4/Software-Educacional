@@ -2,28 +2,30 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz - Animaledge</title>
     <link rel="stylesheet" href="style.css">
-    <script src="perguntas.js"></script>
 </head>
-
 <body>
+
+
 
 <main class="container">
 
-    <h1>Quiz Animaledge</h1>
-
-    <div id="quiz-box">
-        <h2 id="pergunta"></h2>
-
-        <div id="alternativas"></div>
-
-        <button class="btn" id="responder">Responder</button>
+     <!-- ==== BARRA DE PROGRESSO ==== -->
+    <div class="progress-container">
+        <div id="progressBar" class="progress-bar"></div>
     </div>
+    <p id="progressText" class="progress-text"></p>
+    
+    <h2 id="tituloPergunta"></h2>
 
+    <div id="opcoes" class="opcoes"></div>
+
+    <button id="btnResponder" class="btn">Responder</button>
 </main>
 
+<script src="perguntas.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>

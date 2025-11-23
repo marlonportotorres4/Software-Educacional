@@ -2,31 +2,91 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Animaledge - Educação em Animação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaledge - Início</title>
     <link rel="stylesheet" href="style.css">
-</head>
 
+    <!-- Fonte Cabin -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
-<header>
-    <img src="imgs/header.jpg" alt="Animaledge">
+<header class="header">
+    <div class="header-gradient"></div>
+    <img src="imgs/header.jpg" alt="Header Animaledge" class="header-banner">
+    <h1 class="header-title">ANIMALEDGE</h1>
 </header>
 
 <main class="container">
-    <h1>Bem-vindo ao Animaledge!</h1>
-    <p>
-        Aqui vai o seu texto explicando o site educacional sobre animação :)
-    </p>
 
-    <h2>Aula em Vídeo</h2>
-    <video controls width="600">
-        <source src="videos/aula.mp4" type="video/mp4">
-    </video>
+    <!-- ================= INTRODUÇÃO ================= -->
+    <section class="intro">
+        <h2>✨ Bem-vindo ao <strong>Animaledge!</strong></h2>
 
-    <h3>Está pronto?</h3>
-    <p>Vamos começar um quiz para testar seus conhecimentos!</p>
+        <p>
+            A animação sempre foi uma das formas mais mágicas de dar vida ao impossível.
+            Desde os primeiros brinquedos ópticos que giravam em círculos para “enganar” nossos olhos, até as superproduções digitais de hoje, existe uma linha do tempo fascinante por trás de cada movimento que vemos nas telas.
+        </p>
 
-    <a class="btn" href="quiz.html">Vamos nessa!</a>
+        <p>
+            Aqui no <strong>Animaledge</strong>, você vai embarcar nessa aventura pela história da animação — passando pelos métodos tradicionais, pelo stop motion, pelas animações 2D e 3D, e pela evolução que transformou desenhos simples em universos inteiros.
+        </p>
+
+        <p>
+            Antes de começar, assista ao vídeo abaixo para entrar no clima e entender como pequenos quadros podem criar grandes histórias.
+        </p>
+
+        <p>
+            Prepare-se para explorar, aprender e, claro… se divertir!
+            Depois da explicação, você será desafiado em um quiz interativo. 😊
+        </p>
+    </section>
+
+    <!-- ================= VÍDEO DE AULA ================= -->
+    <section>
+        <h3>Aula introdutória:</h3>
+        <video src="videos/aula.mp4" controls class="video-aula"></video>
+    </section>
+
+    <!-- ================= EXPLICAÇÃO DO QUIZ ================= -->
+    <section class="quiz-explicacao">
+        <h2>🎥 Após essa aula, está pronto para um novo desafio?</h2>
+
+        <p>Se prepare para o nosso quiz do <strong>Animaledge</strong>!</p>
+
+        <p>
+            Aqui você vai responder <strong>5 perguntas</strong>, cada uma abordando conceitos básicos sobre a história e os tipos de animação.
+        </p>
+
+        <p><strong>Como funciona:</strong></p>
+
+        <ul>
+            <li>Cada pergunta tem uma imagem ilustrativa.</li>
+            <li>Você escolhe uma alternativa e clica em <strong>Confirmar</strong>.</li>
+            <li>Se acertar, aparece verde e toca um som.</li>
+            <li>Se errar, aparece vermelho e toca outro som.</li>
+            <li>A barra superior mostra seu progresso no quiz.</li>
+            <li>Um timer acompanha você!</li>
+            <li>É possível navegar pelas perguntas usando as setinhas.</li>
+        </ul>
+
+        <p>No final:</p>
+
+        <ul>
+            <li>Se acertar mais da metade → você verá uma animação especial de parabéns.</li>
+            <li>Se errar → verá uma mensagem de que ainda não está pronto (mas pode tentar de novo!).</li>
+        </ul>
+
+        <p><strong>Boa sorte, e vamos nessa! 🚀🎬</strong></p>
+    </section>
+
+    <!-- ================= BOTÃO PARA COMEÇAR O QUIZ ================= -->
+    <section class="start">
+        <h3>Pronto para começar?</h3>
+        <p>Clique no botão abaixo para iniciar o quiz.</p>
+        <a class="btn" href="quiz.html">Vamos nessa!</a>
+    </section>
+
 </main>
 
 </body>

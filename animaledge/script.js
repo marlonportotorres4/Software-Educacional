@@ -1,69 +1,80 @@
-let perguntasSelecionadas = [];
-let indicePergunta = 0;
+let perguntas = [];
+let indice = 0;
 let acertos = 0;
-let alternativaEscolhida = null;
-
-// Seleciona 5 perguntas aleatórias
-while (perguntasSelecionadas.length < 5) {
-    let p = perguntas[Math.floor(Math.random() * perguntas.length)];
-    if (!perguntasSelecionadas.includes(p)) perguntasSelecionadas.push(p);
-}
+let respostaSelecionada = null;
 
 const somCorreto = new Audio("sounds/correto.mp3");
 const somErrado = new Audio("sounds/errado.mp3");
 
-function carregarPergunta() {
-    const p = perguntasSelecionadas[indicePergunta];
-    document.getElementById("pergunta").innerText = p.pergunta;
 
-    const divAlt = document.getElementById("alternativas");
-    divAlt.innerHTML = "";
-
-    p.alternativas.forEach((alt, index) => {
-        const btn = document.createElement("button");
-        btn.className = "alternativa";
-        btn.innerText = alt;
-
-        btn.onclick = () => {
-            document
-                .querySelectorAll(".alternativa")
-                .forEach(b => b.classList.remove("selecionada"));
-            btn.classList.add("selecionada");
-            alternativaEscolhida = index;
-        };
-
-        divAlt.appendChild(btn);
-    });
+function embaralhar(array){
+    return array.sort(() => Math.random() - 0.5);
 }
 
-document.getElementById("responder").onclick = () => {
-    if (alternativaEscolhida === null) return alert("Escolha uma alternativa!");
+function carregarPergunta(){
+    const p = perguntas[indice];
 
-    const p = perguntasSelecionadas[indicePergunta];
-    const botoes = document.querySelectorAll(".alternativa");
+    document.getElementById("tituloPergunta").textContent = p.pergunta;
 
-    if (alternativaEscolhida === p.correta) {
-        botoes[alternativaEscolhida].classList.add("correta");
+    const opcoesDiv = document.getElementById("opcoes");
+    opcoesDiv.innerHTML = "";
+
+    p.alternativas.forEach((alt, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = alt;
+        btn.classList.add("opcao");
+        btn.onclick = () => selecionarResposta(i, btn);
+        opcoesDiv.appendChild(btn);
+    });
+
+     // ★ ATUALIZAÇÃO DA BARRA DE PROGRESSO ★
+    let progresso = ((indice + 1) / perguntas.length) * 100;
+    document.getElementById("progressBar").style.width = progresso + "%";
+
+    // ★ TEXTO "Pergunta X de Y" ★
+    document.getElementById("progressText").textContent =
+        `${indice + 1} de ${perguntas.length}`;
+
+}
+
+function selecionarResposta(i, botao){
+    respostaSelecionada = i;
+
+    document.querySelectorAll(".opcao").forEach(b => b.classList.remove("selecionada"));
+    botao.classList.add("selecionada");
+}
+
+document.getElementById("btnResponder").onclick = () => {
+    if(respostaSelecionada === null) return alert("Selecione uma resposta!");
+
+    const p = perguntas[indice];
+    const opcoes = document.querySelectorAll(".opcao");
+
+    if(respostaSelecionada === p.correta){
         somCorreto.play();
+        opcoes[respostaSelecionada].classList.add("correto");
         acertos++;
     } else {
-        botoes[alternativaEscolhida].classList.add("errada");
-        botoes[p.correta].classList.add("correta");
         somErrado.play();
+        opcoes[respostaSelecionada].classList.add("errado");
+        opcoes[p.correta].classList.add("correto");
     }
 
     setTimeout(() => {
-        indicePergunta++;
-        alternativaEscolhida = null;
+        indice++;
+        respostaSelecionada = null;
 
-        if (indicePergunta === 5) {
-            // Salva pontuação e vai para resultado
+        if(indice >= 5){
             localStorage.setItem("acertos", acertos);
             window.location.href = "result.html";
+
         } else {
             carregarPergunta();
         }
     }, 1500);
 };
 
-carregarPergunta();
+window.onload = () => {
+    perguntas = embaralhar(bancoPerguntas).slice(0,5);
+    carregarPergunta();
+};

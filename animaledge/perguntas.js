@@ -1,27 +1,27 @@
-const perguntas = [
+const bancoPerguntas = [
     {
-        pergunta: "Qual desses é um tipo de animação?",
-        alternativas: ["Stop motion", "Pilates", "Origami", "Alongamento"],
+        pergunta: "O que é animação?",
+        alternativas: ["Sequência de imagens", "Foto única", "Som em looping", "Grito de personagem"],
         correta: 0
     },
     {
-        pergunta: "O que define o stop motion?",
-        alternativas: ["Fotos sequenciais", "Desenhos digitais", "Vídeos longos", "Captação de áudio"],
-        correta: 0
+        pergunta: "Quantos quadros por segundo formam um movimento fluido?",
+        alternativas: ["1 FPS", "5 FPS", "24 FPS", "100 FPS"],
+        correta: 2
     },
     {
-        pergunta: "Quantos FPS normalmente deixa a animação fluida?",
-        alternativas: ["1 FPS", "12 FPS", "3 FPS", "2 FPS"],
+        pergunta: "Stop Motion usa:",
+        alternativas: ["Desenhos digitais", "Modelos reais fotografados", "Som ambiente", "Nenhuma das anteriores"],
         correta: 1
     },
     {
-        pergunta: "A animação 2D é feita com...",
-        alternativas: ["Fotos", "Desenhos", "Esculturas", "Roupas"],
-        correta: 1
+        pergunta: "A animação 2D usa:",
+        alternativas: ["Desenhos planos", "Câmeras 3D reais", "Som binaural", "Partículas físicas"],
+        correta: 0
     },
     {
-        pergunta: "Qual ferramenta ajuda a criar animações 3D?",
-        alternativas: ["Blender", "Excel", "Word", "Spotify"],
-        correta: 0
+        pergunta: "Qual elemento NÃO faz parte das animações?",
+        alternativas: ["Personagens", "Cenário", "Iluminação", "Gás do fogão"],
+        correta: 3
     }
 ];
