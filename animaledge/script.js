@@ -3,8 +3,8 @@ let indice = 0;
 let acertos = 0;
 let respostaSelecionada = null;
 
-const somCorreto = new Audio("sounds/correto.mp3");
-const somErrado = new Audio("sounds/errado.mp3");
+const somCorreto = new Audio("sounds/SomDeAcerto.wav");
+const somErrado = new Audio("sounds/SomDeErro.wav");
 
 
 function embaralhar(array){
