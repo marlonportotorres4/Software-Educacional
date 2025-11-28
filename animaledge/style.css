@@ -43,6 +43,7 @@ body {
     z-index: 2;
     letter-spacing: 2px;
     text-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+    padding-bottom: 70px;
 }
 
 /* ======== RESTO DO CSS COMO ESTAVA ======== */

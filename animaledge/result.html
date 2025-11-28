@@ -13,14 +13,14 @@
 
 <script>
     const acertos = Number(localStorage.getItem("acertos"));
-    const total = 5;
+    const total = 15;
 
     const container = document.getElementById("resultado");
 
 
-    const somPassou = new Audio("sounds/Passou.mp3");
+    const somPassou = new Audio("sounds/SOMDEVITORIA.mp3");
 
-    if(acertos >= 3){
+    if(acertos >= 8){
         container.innerHTML = `
         <h1>🎉 Parabéns! 🎉</h1>
         <p>Você acertou <strong>${acertos}/${total}</strong></p>

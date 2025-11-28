@@ -64,7 +64,7 @@ document.getElementById("btnResponder").onclick = () => {
         indice++;
         respostaSelecionada = null;
 
-        if(indice >= 5){
+        if(indice >= perguntas.length){
             localStorage.setItem("acertos", acertos);
             window.location.href = "result.html";
 
@@ -75,6 +75,6 @@ document.getElementById("btnResponder").onclick = () => {
 };
 
 window.onload = () => {
-    perguntas = embaralhar(bancoPerguntas).slice(0,5);
+    perguntas = embaralhar(bancoPerguntas).slice(0,15);
     carregarPergunta();
 };
