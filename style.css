@@ -1,0 +1,134 @@
+/* Fonte Cabin aplicada em tudo */
+body {
+    font-family: 'Cabin', sans-serif;
+    background: #f1cea9;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======== HEADER COM DEGRADÊ ======== */
+.header {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.header-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Degradê horizontal saindo do texto até a imagem */
+.header-gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    z-index: 1;
+}
+
+/* Texto grande "ANIMALEDGE" */
+.header-title {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 58px;
+    color: white;
+    font-weight: 700;
+    z-index: 2;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+    padding-bottom: 70px;
+}
+
+/* ======== RESTO DO CSS COMO ESTAVA ======== */
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: #f7e9da;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #3aa55d;
+    color: white;
+    padding: 12px 22px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.video-aula {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcao {
+    padding: 12px;
+    background: #ddd;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.opcao.selecionada {
+    background: #b2b9f7;
+}
+
+.opcao.correto {
+    background: #4CAF50;
+    color: white;
+}
+
+.opcao.errado {
+    background: #d9534f;
+    color: white;
+}
+
+.stopmotion img {
+    width: 90px;
+    margin: 5px;
+}
+
+/* ======== BARRA DE PROGRESSO ======== */
+
+.progress-container {
+    width: 100%;
+    background: #d8c3a9;
+    height: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #6b5bff;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
